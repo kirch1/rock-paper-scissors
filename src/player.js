@@ -1,22 +1,15 @@
 class Player {
-    constructor(name) {
+    constructor(name, isComputer) {
         this.name = name;
+        this.isComputer = isComputer;
         this.wins = 0;
     }
 
-    takeTurn(isClassic, selection) {
-
-        if(this.name === 'Robot'){
-            if(isClassic){
-                selection = Math.ceil(3 * Math.random())
-            }
-            selection = Math.ceil(5 * Math.random())
+    takeTurn(gameMode, selection) {
+        var fighters = fightersData[gameMode];
+        if(this.isComputer){
+            selection = Math.ceil(3 * Math.random());
         }
-
-        if(isClassic) {
-            return basicFighters[selection];
-        }else {
-            return advancedFighters[selection];
-        }
+        return fighters[selection];
     }
 }
