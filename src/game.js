@@ -1,35 +1,40 @@
 class Game {
-    constructor(player1, computer, gameMode) {
+    constructor(player1, player2, gameMode) {
         this.player1 = player1;
-        this.computer = computer;
-        this.gameMode = 'classic';
+        this.player2 = player2;
+        this.gameMode = gameMode;
         this.gameData = {
-            humanFighter: null,
-            computerFighter: null
+            player1Fighter: null,
+            player2Fighter: null
         }
     }
 
-    setFighters(humanFighter,computerFighter) {
-        this.gameData.humanFighter = humanFighter;
-        this.gameData.computerFighter = computerFighter;
+    setFighters(player1Fighter,player2Fighter) {
+        this.gameData.player1Fighter = player1Fighter;
+        this.gameData.player2Fighter = player2Fighter;
     }
 
     playRound() {
-        if(humanFighter.id === robotFighter.id) {
+        var fighter1 = this.gameData.player1Fighter;
+        var fighter2 = this.gameData.player2Fighter;
+
+        console.log(fighter1.beats)
+
+        if(fighter1.id === fighter2.id) {
             return 'DRAW!'
         }
-        if(humanFighter.beats.includes(robotFighter.id)){
-            this.human.wins++;
-            return `${this.human.name} WINS!`;
+        if(fighter1.beats.includes(fighter2.id)){
+            this.player1.wins++;
+            return `${this.player1.name} WINS!`;
         }
-        this.robot.wins++;
-        return `${this.robot.name} WINS!`;
+        this.player2.wins++;
+        return `${this.player2.name} WINS!`;
     }
 
     resetGame() {
         this.gameData = {
-            humanFighter: null,
-            computerFighter: null
+            player2Fighter: null,
+            player2Fighter: null
         }
     }
 }

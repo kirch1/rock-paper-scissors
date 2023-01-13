@@ -1,14 +1,14 @@
 class Player {
-    constructor(name, isComputer) {
+    constructor(name, computerControlled) {
         this.name = name;
-        this.isComputer = isComputer;
+        this.computerControlled = computerControlled;
         this.wins = 0;
     }
 
     takeTurn(gameMode, selection) {
         var fighters = fightersData[gameMode];
-        if(this.isComputer){
-            selection = Math.ceil(3 * Math.random());
+        if(this.computerControlled){
+            selection = Math.floor((fighters.length) * Math.random());
         }
         return fighters[selection];
     }

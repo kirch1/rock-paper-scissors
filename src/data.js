@@ -1,10 +1,10 @@
 var fightersData = {
-    basic:[   
+    classic:[   
         {
             id: "Rock",
             img: "assets/fighters/basic/rock.svg",
             color: '#60B2E5',
-            beats:["Paper"]
+            beats:["Scissors"]
         },
         {
             id: "Paper",
