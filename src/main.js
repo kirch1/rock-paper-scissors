@@ -9,6 +9,8 @@ var player2Section = document.getElementById('player-two-section');
 var player2Name = document.getElementById('player-two-name');
 var player2Score = document.getElementById('player-two-score');
 
+
+
 window.addEventListener('load', function() {
     displayPlayerData();
 });
