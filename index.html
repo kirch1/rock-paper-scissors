@@ -9,29 +9,31 @@
 </head>
 
 <body class="pattern-background">
-    <aside id="player-one-section" class="side-panel side-panel-left">
-        <img src="assets/human/joy.png" alt="Robot neutral" />
+    <aside id="player-one-section" class="side-panel side-panel-left frosted">
+        <img src="./assets/human/joy.png" alt="Robot neutral" />
         <p id="player-one-name">Human</p>
         <p>Wins: <span id="player-one-score">0</span></p>
     </aside>
     <main>
         <h1>ROCK-PAPER-SCISSORS</h1>
-        <section id="game-selection-section">
-            <div id="classic-selection" class="game-selector">
-
+        <section class="game-selection-section">
+            <div id="classic-selection" class="game-selector frosted">
+                <h3>Classic</h3>
+                <img src="./assets/rules/classic.png">
             </div>
-            <div id="advanced-selection" class="game-selecto">
-
+            <div id="advanced-selection" class="game-selector frosted">
+                <h3>Advanced</h3>
+                <img src="./assets/rules/advanced.png">
             </div>
         </section>
         <section id="fighters-grid" class="fighters-area hidden">
-            <img class="fighter fighter1" src="assets/fighters/classic/rock.svg" alt="Rock fighter" />
-            <img class="fighter fighter2" src="assets/fighters/classic/paper.svg" alt="Paper fighter" />
-            <img class="fighter fighter3" src="assets/fighters/classic/scissors.svg" alt="Scissor fighter" />
+            <img class="fighter fighter1" src="./assets/fighters/classic/rock.svg" alt="Rock fighter" />
+            <img class="fighter fighter2" src="./assets/fighters/classic/paper.svg" alt="Paper fighter" />
+            <img class="fighter fighter3" src="./assets/fighters/classic/scissors.svg" alt="Scissor fighter" />
         </section>
-        <h3>Choose Your Fighter!</h3>
+        <p>Select Game Mode!</p>
     </main>
-    <aside id="player-two-section" class="side-panel side-panel-right">
+    <aside id="player-two-section" class="side-panel side-panel-right frosted">
         <img src="assets/robot/smile.png" alt="Robot neutral" />
         <p id="player-two-name">Robot</p>
         <p>Wins: <span id="player-two-score">0</span></p>
