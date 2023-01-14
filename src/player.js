@@ -3,6 +3,8 @@ class Player {
         this.name = name;
         this.computerControlled = computerControlled;
         this.wins = 0;
+        this.streak = 0;
+        this.topStreak = 0;
     }
 
     takeTurn(gameMode, selection) {

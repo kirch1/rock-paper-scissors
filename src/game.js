@@ -18,8 +18,6 @@ class Game {
         var fighter1 = this.gameData.player1Fighter;
         var fighter2 = this.gameData.player2Fighter;
 
-        console.log(fighter1.beats)
-
         if(fighter1.id === fighter2.id) {
             return 'DRAW!'
         }
@@ -27,8 +25,11 @@ class Game {
             this.player1.wins++;
             return `${this.player1.name} WINS!`;
         }
-        this.player2.wins++;
-        return `${this.player2.name} WINS!`;
+        if(fighter2.beats.includes(fighter1.id)){
+            this.player2.wins++;
+            return `${this.player2.name} WINS!`;
+        }
+        return 'GAME ERROR';
     }
 
     resetGame() {
