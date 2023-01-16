@@ -3,7 +3,7 @@ var fightersData = {
         {
             id: "Rock",
             img: "assets/fighters/classic/rock.svg",
-            color: '#706C61',
+            color: '#9A7197',
             beats:["Scissors"]
         },
         {
@@ -23,31 +23,31 @@ var fightersData = {
         {
             id: "Water",
             img: "assets/fighters/advanced/water.svg",
-            color: '#706C61',
+            color: '#4B84AD',
             beats:["Fire", "Plant"]
         },
         {
             id: "Fire",
             img: "assets/fighters/advanced/fire.svg",
-            color: '#706C61',
+            color: '#A72608',
             beats:["Plant", "Psychic"]
         },
         {
             id: "Plant",
             img: "assets/fighters/advanced/plant.svg",
-            color: '#706C61',
+            color: '#06D6A0',
             beats:["Psychic", "Electric"]
         },
         {
             id: "Psychic",
             img: "assets/fighters/advanced/psychic.svg",
-            color: '#706C61',
+            color: '#B47EB3',
             beats:["Electric", "Water"]
         },
         {
             id: "Electric",
             img: "assets/fighters/advanced/electric.svg",
-            color: '#706C61',
+            color: '#FFD166',
             beats:["Water", "Fire"]
         }
     ]

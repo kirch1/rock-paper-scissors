@@ -19,7 +19,7 @@ class Game {
         var fighter2 = this.gameData.player2Fighter;
 
         if(fighter1.id === fighter2.id) {
-            return 'DRAW!'
+            return 'Its a Draw!'
         }
         if(fighter1.beats.includes(fighter2.id)){
             this.player1.wins++;
