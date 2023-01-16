@@ -24,6 +24,25 @@ body {
     background-color: rgba(255, 255, 255, .2);
 }
 
+#change-game {
+    position: absolute;
+    bottom: 2vh;
+    width: 80%;
+    padding: 1vmin;
+    font-size: 1.2vw;
+    font-family: 'Audiowide', cursive;
+    border-radius: 1vw;
+    border-style: none;
+    background-color: #323232;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+#change-game:hover {
+    scale: 1.1;
+    background-color: #4a4a4a;
+}
+
 .side-panel {
     display: flex;
     flex-direction: column;
@@ -31,21 +50,30 @@ body {
     align-items: center;
     flex-basis: 15%;
     backdrop-filter: blur(4px);
-    /* background-color: rgba(255, 255, 255, .2); */
     filter: drop-shadow(2px 0px 8px rgb(0,0,0));
-    padding: 3vw;
 }
 
-.side-panel p {
+.player-names {
     font-size: 2vw;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin: 0;
+    margin-bottom: 5vh;
+}
+
+.game-stats {
+    font-size: 1.2vw;
+    margin: 0;
+    text-align: left;
 }
 
 .side-panel-right{
     filter: drop-shadow(-2px 0px 8px rgb(0,0,0));
     border-left-style: solid;
     border-left-color: rgba(255, 255, 255, .4);
+}
+
+.side-panel img {
+    padding-left: 2.1vw;
+    padding-right: 2.1vw;
 }
 
 .side-panel-right img {
@@ -60,7 +88,7 @@ body {
 
 .side-panel-left img {
     width: 100%;
-    padding: 0.5vw;
+    margin-bottom: 1vh;
 }
 
 main {

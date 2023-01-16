@@ -11,8 +11,11 @@
 <body class="pattern-background">
     <aside style="background-color:rgba(255, 255, 255, .2)" id="player-one-section" class="side-panel side-panel-left">
         <img id="player-one-img" src="./assets/human/joy.png" alt="Robot neutral" />
-        <p id="player-one-name">Human</p>
-        <p>Wins: <span id="player-one-score">0</span></p>
+        <p class="player-names" id="player-one-name">Human</p>
+        <p class="game-stats">Total Wins: <span id="player-one-score">0</span></p>
+        <p class="game-stats">Win Streak: <span id="player-one-streak">0</span></p>
+        <p class="game-stats">Best Streak: <span id="player-one-streak-max">0</span></p>
+        <button id="change-game" class="hidden">Change Game</button>
     </aside>
     <main>
         <h1>ROCK-PAPER-SCISSORS</h1>
@@ -33,8 +36,10 @@
     </main>
     <aside id="player-two-section" class="side-panel side-panel-right frosted">
         <img id="player-two-img" src="assets/robot/smile.png" alt="Robot neutral" />
-        <p id="player-two-name">Robot</p>
-        <p>Wins: <span id="player-two-score">0</span></p>
+        <p class="player-names" id="player-two-name">Robot</p>
+        <p class="game-stats">Total Wins:  <span id="player-two-score">0</span></p>
+        <p class="game-stats">Win Streak:  <span id="player-two-streak">0</span></p>
+        <p class="game-stats">Best Streak:  <span id="player-two-streak-max">0</span></p>
     </aside>
     <script src="./src/data.js"></script>
     <script src="./src/player.js"></script>
