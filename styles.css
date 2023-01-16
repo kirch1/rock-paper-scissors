@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-basis: 15%;
+    flex-basis: 16%;
     backdrop-filter: blur(4px);
     filter: drop-shadow(2px 0px 8px rgb(0,0,0));
 }
@@ -92,7 +92,7 @@ body {
 }
 
 main {
-    flex-basis: 70%;
+    flex-basis: 68%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -156,8 +156,8 @@ main p {
 
 .fighters-area {
     display: flex;
-    gap: 4vmin;
-    flex-wrap: wrap;
+    gap: 3vmin;
+    flex-wrap:wrap-reverse;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -172,7 +172,7 @@ main p {
     border-color: whitesmoke;
     border-radius: 50%;
     width: 18vmin;
-    max-width: 220px;
+    max-width: 200px;
 }
 
 .fighter:hover {

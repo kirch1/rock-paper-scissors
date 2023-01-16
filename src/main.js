@@ -3,11 +3,13 @@ var player1 = new Player("Human", false, {
     win: ['excited.png'],
     lose: ['hate.png', 'confused.png']
 });
+player1.retrieveStatsFromStorage();
 var player2 = new Player("Robot", true,{
     default: 'smile.png',
     win: ['cool.png', 'grinning.png', 'laugh.png', 'wink.png'],
     lose: ['angry.png', 'sad.png', 'scare.png']
 });
+player2.retrieveStatsFromStorage();
 var game = null;
 var enableUserInteraction = true;
 
