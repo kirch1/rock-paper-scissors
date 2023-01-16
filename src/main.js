@@ -5,7 +5,7 @@ var player1 = new Player("Human", false, {
 });
 var player2 = new Player("Robot", true,{
     default: 'smile.png',
-    win: ['cool.png', 'grinning.png', 'laugh.png', 'wing.png'],
+    win: ['cool.png', 'grinning.png', 'laugh.png', 'wink.png'],
     lose: ['angry.png', 'sad.png', 'scare.png']
 });
 var game = null;
@@ -14,16 +14,21 @@ var enableUserInteraction = true;
 var player1Section = document.getElementById('player-one-section');
 var player1Name = document.getElementById('player-one-name');
 var player1Score = document.getElementById('player-one-score');
+var player1Streak = document.getElementById('player-one-streak');
+var player1StreakMax = document.getElementById('player-one-streak-max');
 var player1Img = document.getElementById('player-one-img');
 var player2Section = document.getElementById('player-two-section');
 var player2Name = document.getElementById('player-two-name');
 var player2Score = document.getElementById('player-two-score');
+var player2Streak = document.getElementById('player-two-streak');
+var player2StreakMax = document.getElementById('player-two-streak-max');
 var player2Img = document.getElementById('player-two-img');
 var infoText = document.getElementById('info-text');
 var gameSelectorSection = document.getElementById('selection-section');
 var classicSelector = document.getElementById('classic-selection');
 var advancedSelector = document.getElementById('advanced-selection');
 var fightersSection = document.getElementById('fighters-selection');
+var changeGame = document.getElementById('change-game');
 
 window.addEventListener('load', function() {
     displayPlayerData();
@@ -47,14 +52,28 @@ fightersSection.addEventListener('click', function(event) {
     }
 });
 
+changeGame.addEventListener('click', function() {
+    if(enableUserInteraction) {
+        show(gameSelectorSection);
+        setInfoText('Select Game Mode!');
+        hide(fightersSection);
+        hide(changeGame);
+    }
+});
+
 function displayPlayerData() {
     player1Name.innerText = player1.name;
     player1Score.innerText = player1.wins;
+    player1Streak.innerText = player1.streak;
+    player1StreakMax.innerText = player1.topStreak;
     player2Name.innerText = player2.name;
     player2Score.innerText = player2.wins;
+    player2Streak.innerText = player2.streak;
+    player2StreakMax.innerText = player2.topStreak;
 }
 
 function displayFightersSection() {
+    show(changeGame);
     hide(gameSelectorSection);
     addFighters();
     setInfoText('Select Your Fighter!');
@@ -78,6 +97,7 @@ function selectFighters(event) {
 }
 
 function startFightSequence() {
+    hide(changeGame);
     displayPlayer1Selection();
     setTimeout(function() {
         displayPlayer2Selection();
@@ -87,6 +107,7 @@ function startFightSequence() {
         setTimeout(function() {
             displayFightersSection();
             enableUserInteraction = true;
+            show(changeGame);
         }, 2800);
     },1200);
 }
@@ -106,10 +127,10 @@ function displayPlayer2Selection() {
 }
 
 function showReactions() {
-    if(game.gameData.winner === 1) {
+    if(game.gameData.winner === player1) {
         player1Img.src = './assets/human/' + getRandomElement(player1.paths.win);
         player2Img.src = './assets/robot/' + getRandomElement(player2.paths.lose);
-    }else if(game.gameData.winner === 2) {
+    }else if(game.gameData.winner === player2) {
         player1Img.src = './assets/human/' + getRandomElement(player1.paths.lose);
         player2Img.src = './assets/robot/' + getRandomElement(player2.paths.win);
     }
