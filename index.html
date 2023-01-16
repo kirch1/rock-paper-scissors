@@ -9,8 +9,8 @@
 </head>
 
 <body class="pattern-background">
-    <aside id="player-one-section" class="side-panel side-panel-left frosted">
-        <img src="./assets/human/joy.png" alt="Robot neutral" />
+    <aside style="background-color:rgba(255, 255, 255, .2)" id="player-one-section" class="side-panel side-panel-left">
+        <img id="player-one-img" src="./assets/human/joy.png" alt="Robot neutral" />
         <p id="player-one-name">Human</p>
         <p>Wins: <span id="player-one-score">0</span></p>
     </aside>
@@ -19,20 +19,20 @@
         <section id="selection-section" class="game-selection-section">
             <div id="classic-selection" class="game-selector frosted">
                 <h3>Classic</h3>
-                <img src="./assets/rules/classic.png">
+                <img draggable="false" src="./assets/rules/classic.png">
             </div>
             <div id="advanced-selection" class="game-selector frosted">
                 <h3>Advanced</h3>
-                <img src="./assets/rules/advanced.png">
+                <img draggable="false" src="./assets/rules/advanced.png">
             </div>
         </section>
         <section id="fighters-selection" class="fighters-area hidden">
             <!-- fighters placeholder -->
         </section>
-        <p>Select Game Mode!</p>
+        <p id="info-text">Select Game Mode!</p>
     </main>
     <aside id="player-two-section" class="side-panel side-panel-right frosted">
-        <img src="assets/robot/smile.png" alt="Robot neutral" />
+        <img id="player-two-img" src="assets/robot/smile.png" alt="Robot neutral" />
         <p id="player-two-name">Robot</p>
         <p>Wins: <span id="player-two-score">0</span></p>
     </aside>

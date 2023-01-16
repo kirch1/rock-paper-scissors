@@ -1,7 +1,8 @@
 class Player {
-    constructor(name, computerControlled) {
+    constructor(name, computerControlled, paths) {
         this.name = name;
         this.computerControlled = computerControlled;
+        this.paths = paths;
         this.wins = 0;
         this.streak = 0;
         this.topStreak = 0;

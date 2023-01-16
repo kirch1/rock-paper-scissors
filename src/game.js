@@ -5,7 +5,8 @@ class Game {
         this.gameMode = gameMode;
         this.gameData = {
             player1Fighter: null,
-            player2Fighter: null
+            player2Fighter: null,
+            winner: 0
         }
     }
 
@@ -19,23 +20,26 @@ class Game {
         var fighter2 = this.gameData.player2Fighter;
 
         if(fighter1.id === fighter2.id) {
-            return 'DRAW!'
+            this.gameData.winner = 0;
+            return 'Its a Draw!'
         }
         if(fighter1.beats.includes(fighter2.id)){
             this.player1.wins++;
-            return `${this.player1.name} WINS!`;
+            this.gameData.winner = 1;
+            return `${fighter1.id} beats ${fighter2.id}!\n${this.player1.name} WINS!`;
         }
         if(fighter2.beats.includes(fighter1.id)){
             this.player2.wins++;
-            return `${this.player2.name} WINS!`;
+            this.gameData.winner = 2;
+            return `${fighter2.id} beats ${fighter1.id}!\n${this.player2.name} WINS!`;
         }
-        return 'GAME ERROR';
     }
 
     resetGame() {
         this.gameData = {
             player2Fighter: null,
-            player2Fighter: null
+            player2Fighter: null,
+            winner: 0
         }
     }
 }
