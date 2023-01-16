@@ -26,15 +26,20 @@ class Game {
         if(fighter1.beats.includes(fighter2.id)){
             this.player1.giveWin();
             this.player2.giveLoss();
+            this.player1.saveStatsToStorage();
+            this.player2.saveStatsToStorage();
             this.gameData.winner = this.player1;
             return `${fighter1.id} beats ${fighter2.id}!\n${this.player1.name} WINS!`;
         }
         if(fighter2.beats.includes(fighter1.id)){
             this.player2.giveWin();
             this.player1.giveLoss();
+            this.player1.saveStatsToStorage();
+            this.player2.saveStatsToStorage();
             this.gameData.winner = this.player2;
             return `${fighter2.id} beats ${fighter1.id}!\n${this.player2.name} WINS!`;
         }
+
     }
 
     resetGame() {
