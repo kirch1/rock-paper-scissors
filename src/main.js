@@ -87,8 +87,8 @@ function startFightSequence() {
         setTimeout(function() {
             displayFightersSection();
             enableUserInteraction = true;
-        }, 2500);
-    },1000);
+        }, 2800);
+    },1200);
 }
 
 function displayPlayer1Selection() {
