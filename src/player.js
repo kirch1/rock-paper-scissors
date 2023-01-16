@@ -15,4 +15,16 @@ class Player {
         }
         return fighters[selection];
     }
+
+    giveWin() {
+        this.wins++;
+        this.streak++;
+        if(this.streak > this.topStreak) {
+            this.topStreak = this.streak;
+        }
+    }
+
+    giveLoss() {
+        this.streak = 0;
+    }
 }
