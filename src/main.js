@@ -85,7 +85,7 @@ function addFighters() {
     var fighters = fightersData[game.gameMode];
     fightersSection.innerHTML = '';
     for(var i = 0; i < fighters.length; i++) {
-        fightersSection.innerHTML += `<img draggable="false" id="fighter" class="fighter" data-fighter-index="${i}" src="${fighters[i].img}" alt="${fighters[i].id} fighter" />`
+        fightersSection.innerHTML += `<img draggable="false" id="fighter" class="fighter" data-fighter-index="${i}" src="${fighters[i].img}" alt="${fighters[i].id} fighter"/>`
     }
 }
 
@@ -107,6 +107,7 @@ function startFightSequence() {
         setTimeout(function() {
             displayFightersSection();
             enableUserInteraction = true;
+            game.resetGame();
             show(changeGame);
         }, 2800);
     },1200);
@@ -123,6 +124,7 @@ function displayPlayer1Selection() {
 function displayPlayer2Selection() {
     var fighter = game.gameData.player2Fighter;
     player2Section.style.backgroundColor = fighter.color + '90';
+    fightersSection.innerHTML += '<p> VS. </p>'
     fightersSection.innerHTML += `<img draggable="false" class="fighter" src="${fighter.img}" alt="${fighter.id} fighter"/>`
 }
 
