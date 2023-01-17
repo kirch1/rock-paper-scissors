@@ -33,12 +33,21 @@ class Player {
         localStorage.setItem(this.name + "_streak", this.streak);
         localStorage.setItem(this.name + "_top_streak", this.topStreak);
     }
-
+    
     retrieveStatsFromStorage() {
         if(localStorage.getItem(this.name + "_wins") !== null) {
             this.wins = parseInt(localStorage.getItem(this.name + "_wins"));
             this.streak = parseInt(localStorage.getItem(this.name + "_streak"));
             this.topStreak = parseInt(localStorage.getItem(this.name + "_top_streak"));
         }
+    }
+    
+    resetStats() {
+        this.wins = 0;
+        this.streak = 0;
+        this.topStreak = 0;
+        localStorage.setItem(this.name + "_wins", 0);
+        localStorage.setItem(this.name + "_streak", 0);
+        localStorage.setItem(this.name + "_top_streak", 0);
     }
 }
