@@ -9,7 +9,7 @@
 </head>
 
 <body class="pattern-background">
-    <aside style="background-color:rgba(255, 255, 255, .2)" id="player-one-section" class="side-panel side-panel-left">
+    <aside id="player-one-section" class="side-panel side-panel-left frosted">
         <img id="player-one-img" src="./assets/human/joy.png" alt="Robot neutral" />
         <p class="player-names" id="player-one-name">Human</p>
         <p class="game-stats">Total Wins: <span id="player-one-score">0</span></p>
@@ -21,11 +21,11 @@
         <h1>ROCK-PAPER-SCISSORS</h1>
         <section id="selection-section" class="game-selection-section">
             <div id="classic-selection" class="game-selector frosted">
-                <h3>Classic</h3>
+                <p>Classic</p>
                 <img draggable="false" src="./assets/rules/classic.png">
             </div>
             <div id="advanced-selection" class="game-selector frosted">
-                <h3>Advanced</h3>
+                <p>Advanced</p>
                 <img draggable="false" src="./assets/rules/advanced.png">
             </div>
         </section>
@@ -40,6 +40,7 @@
         <p class="game-stats">Total Wins:  <span id="player-two-score">0</span></p>
         <p class="game-stats">Win Streak:  <span id="player-two-streak">0</span></p>
         <p class="game-stats">Best Streak:  <span id="player-two-streak-max">0</span></p>
+        <button id="reset-stats" class="hidden">Change Game</button>
     </aside>
     <script src="./src/fighter.js"></script>
     <script src="./src/player.js"></script>

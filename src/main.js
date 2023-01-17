@@ -48,7 +48,7 @@ advancedSelector.addEventListener('click', function() {
 
 fightersSection.addEventListener('click', function(event) {
     if(event.target.id === 'fighter' & enableUserInteraction) {
-        enableUserInteraction = false;
+        
         selectFighters(event);
         startFightSequence();
     }
@@ -80,7 +80,6 @@ function displayFightersSection() {
     addFighters();
     setInfoText('Select Your Fighter!');
     show(fightersSection);
-    resetPlayerSection();
 }
 
 function addFighters() {
@@ -99,6 +98,7 @@ function selectFighters(event) {
 }
 
 function startFightSequence() {
+    enableUserInteraction = false;
     hide(changeGame);
     displayPlayer1Selection();
     setTimeout(function() {
@@ -110,6 +110,7 @@ function startFightSequence() {
             displayFightersSection();
             enableUserInteraction = true;
             game.resetGame();
+            resetPlayerSections();
             show(changeGame);
         }, 2600);
     },1200);
@@ -140,7 +141,7 @@ function showReactions() {
     }
 }
 
-function resetPlayerSection() {
+function resetPlayerSections() {
     player1Section.style.backgroundColor = 'rgba(255, 255, 255, .2)';
     player2Section.style.backgroundColor = 'rgba(255, 255, 255, .2)';
     player1Img.src = './assets/human/' + player1.paths.default;
