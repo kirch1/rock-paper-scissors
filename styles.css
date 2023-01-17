@@ -5,11 +5,11 @@
 }
 
 body {
-    font-family: 'Audiowide', cursive;
+    display: flex;
     margin: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    font-family: 'Audiowide', cursive;
     color: whitesmoke;
 }
 
@@ -74,9 +74,6 @@ body {
 .side-panel img {
     padding-left: 2.1vw;
     padding-right: 2.1vw;
-}
-
-.side-panel-right img {
     width: 100%;
 }
 
@@ -87,7 +84,6 @@ body {
 }
 
 .side-panel-left img {
-    width: 100%;
     margin-bottom: 1vh;
 }
 
@@ -148,7 +144,7 @@ main p {
     max-height: 90%;
 }
 
-.game-selector > h3 {
+.game-selector p {
     font-size: 3vw;
     margin: 0;
     text-align: center;
@@ -171,7 +167,7 @@ main p {
     border-style: solid;
     border-color: whitesmoke;
     border-radius: 50%;
-    width: 18vmin;
+    width: 20vmin;
     max-width: 200px;
 }
 
