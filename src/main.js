@@ -111,7 +111,7 @@ function startFightSequence() {
             enableUserInteraction = true;
             game.resetGame();
             show(changeGame);
-        }, 2800);
+        }, 2600);
     },1200);
 }
 
