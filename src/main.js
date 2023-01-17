@@ -3,12 +3,12 @@ var player1 = new Player("Human", false, {
     win: ['excited.png'],
     lose: ['hate.png', 'confused.png']
 });
-player1.retrieveStatsFromStorage();
 var player2 = new Player("Robot", true,{
     default: 'smile.png',
     win: ['cool.png', 'grinning.png', 'laugh.png', 'wink.png'],
     lose: ['angry.png', 'sad.png', 'scare.png']
 });
+player1.retrieveStatsFromStorage();
 player2.retrieveStatsFromStorage();
 var game = null;
 var enableUserInteraction = true;
@@ -31,6 +31,7 @@ var classicSelector = document.getElementById('classic-selection');
 var advancedSelector = document.getElementById('advanced-selection');
 var fightersSection = document.getElementById('fighters-selection');
 var changeGame = document.getElementById('change-game');
+var resetStats = document.getElementById('reset-stats');
 
 window.addEventListener('load', function() {
     displayPlayerData();
@@ -48,19 +49,22 @@ advancedSelector.addEventListener('click', function() {
 
 fightersSection.addEventListener('click', function(event) {
     if(event.target.id === 'fighter' & enableUserInteraction) {
-        
         selectFighters(event);
         startFightSequence();
     }
 });
 
 changeGame.addEventListener('click', function() {
-    if(enableUserInteraction) {
-        show(gameSelectorSection);
-        setInfoText('Select Game Mode!');
-        hide(fightersSection);
-        hide(changeGame);
-    }
+    show(gameSelectorSection);
+    setInfoText('Select Game Mode!');
+    hide(fightersSection);
+    hide(changeGame);
+});
+
+resetStats.addEventListener('click', function() {
+    player1.resetStats();
+    player2.resetStats();
+    displayPlayerData();
 });
 
 function displayPlayerData() {
@@ -100,6 +104,7 @@ function selectFighters(event) {
 function startFightSequence() {
     enableUserInteraction = false;
     hide(changeGame);
+    hide(resetStats);
     displayPlayer1Selection();
     setTimeout(function() {
         displayPlayer2Selection();
@@ -112,6 +117,7 @@ function startFightSequence() {
             game.resetGame();
             resetPlayerSections();
             show(changeGame);
+            show(resetStats);
         }, 2600);
     },1200);
 }

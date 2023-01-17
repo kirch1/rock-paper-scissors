@@ -24,25 +24,6 @@ body {
     background-color: rgba(255, 255, 255, .2);
 }
 
-#change-game {
-    position: absolute;
-    bottom: 2vh;
-    width: 80%;
-    padding: 1vmin;
-    font-size: 1.2vw;
-    font-family: 'Audiowide', cursive;
-    border-radius: 1vw;
-    border-style: none;
-    background-color: #323232;
-    color: whitesmoke;
-    cursor: pointer;
-}
-
-#change-game:hover {
-    scale: 1.1;
-    background-color: #4a4a4a;
-}
-
 .side-panel {
     display: flex;
     flex-direction: column;
@@ -85,6 +66,26 @@ body {
 
 .side-panel-left img {
     margin-bottom: 1vh;
+}
+
+.side-panel button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2vh;
+    width: 80%;
+    padding: 1vmin;
+    font-size: 1.2vw;
+    font-family: 'Audiowide', cursive;
+    border-radius: 1vw;
+    border-style: none;
+    background-color: #323232;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.side-panel button:hover {
+    background-color: #4a4a4a;
 }
 
 main {
