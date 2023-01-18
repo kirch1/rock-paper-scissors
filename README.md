@@ -1,11 +1,11 @@
 # Rock, Paper, Scissors
-
-### Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 This application allows a user to play the game Rock, Papers, Scissors against the computer who is making random selections. The user can play two different game modes: classic with 3 choices, and advanced with 5 choices. Total wins, current win streak, and longest win streak are saved and displayed for both the user and computer player.
 
 ### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+##### Run via web
+[Click Here to Launch](https://kirch1.github.io/rock_paper_scissors/)
+##### Run local
 1. Copy the SSH key on GitHub inside the code dropdown
 2. Using the terminal, run `git clone [SSH key here]`
 3. Run command `cd rock_paper_scissors` to move into the project directory
