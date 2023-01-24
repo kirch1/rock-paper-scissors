@@ -4,7 +4,7 @@ This application allows a user to play the game Rock, Papers, Scissors against t
 
 ### Installation Instructions:
 ##### Run via web
-[Click Here to Launch](https://kirch1.github.io/rock_paper_scissors/)
+[Click Here to Launch](https://kirch1.github.io/rock-paper-scissors/)
 ##### Run local
 1. Copy the SSH key on GitHub inside the code dropdown
 2. Using the terminal, run `git clone [SSH key here]`
