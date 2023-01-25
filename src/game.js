@@ -16,30 +16,29 @@ class Game {
     }
 
     playRound() {
-        var fighter1 = this.gameData.player1Fighter;
-        var fighter2 = this.gameData.player2Fighter;
+        const fighter1 = this.gameData.player1Fighter;
+        const fighter2 = this.gameData.player2Fighter;
 
         if(fighter1.id === fighter2.id) {
             this.gameData.winner = null;
             return 'Its a Draw!'
         }
         if(fighter1.beats.includes(fighter2.id)){
-            this.player1.giveWin();
-            this.player2.giveLoss();
-            this.player1.saveStatsToStorage();
-            this.player2.saveStatsToStorage();
-            this.gameData.winner = this.player1;
+            this.processWin(this.player1, this.player2)
             return `${fighter1.id} beats ${fighter2.id}!\n${this.player1.name} WINS!`;
         }
         if(fighter2.beats.includes(fighter1.id)){
-            this.player2.giveWin();
-            this.player1.giveLoss();
-            this.player1.saveStatsToStorage();
-            this.player2.saveStatsToStorage();
-            this.gameData.winner = this.player2;
+            this.processWin(this.player2, this.player1)
             return `${fighter2.id} beats ${fighter1.id}!\n${this.player2.name} WINS!`;
         }
+    }
 
+    processWin(winner, loser) {
+        winner.giveWin();
+        loser.giveLoss();
+        winner.saveStatsToStorage();
+        loser.saveStatsToStorage();
+        this.gameData.winner = winner;
     }
 
     resetGame() {

@@ -1,37 +1,37 @@
-var player1 = new Player("Human", false, {
+const player1 = new Player("Human", false, {
     default: 'joy.png',
     win: ['excited.png'],
     lose: ['hate.png', 'confused.png']
 });
-var player2 = new Player("Robot", true,{
+const player2 = new Player("Robot", true,{
     default: 'smile.png',
     win: ['cool.png', 'grinning.png', 'laugh.png', 'wink.png'],
     lose: ['angry.png', 'sad.png', 'scare.png']
 });
 player1.retrieveStatsFromStorage();
 player2.retrieveStatsFromStorage();
-var game = null;
-var enableUserInteraction = true;
+let game = null;
+let enableUserInteraction = true;
 
-var player1Section = document.getElementById('player-one-section');
-var player1Name = document.getElementById('player-one-name');
-var player1Score = document.getElementById('player-one-score');
-var player1Streak = document.getElementById('player-one-streak');
-var player1StreakMax = document.getElementById('player-one-streak-max');
-var player1Img = document.getElementById('player-one-img');
-var player2Section = document.getElementById('player-two-section');
-var player2Name = document.getElementById('player-two-name');
-var player2Score = document.getElementById('player-two-score');
-var player2Streak = document.getElementById('player-two-streak');
-var player2StreakMax = document.getElementById('player-two-streak-max');
-var player2Img = document.getElementById('player-two-img');
-var infoText = document.getElementById('info-text');
-var gameSelectorSection = document.getElementById('selection-section');
-var classicSelector = document.getElementById('classic-selection');
-var advancedSelector = document.getElementById('advanced-selection');
-var fightersSection = document.getElementById('fighters-selection');
-var changeGame = document.getElementById('change-game');
-var resetStats = document.getElementById('reset-stats');
+const player1Section = document.getElementById('player-one-section');
+const player1Name = document.getElementById('player-one-name');
+const player1Score = document.getElementById('player-one-score');
+const player1Streak = document.getElementById('player-one-streak');
+const player1StreakMax = document.getElementById('player-one-streak-max');
+const player1Img = document.getElementById('player-one-img');
+const player2Section = document.getElementById('player-two-section');
+const player2Name = document.getElementById('player-two-name');
+const player2Score = document.getElementById('player-two-score');
+const player2Streak = document.getElementById('player-two-streak');
+const player2StreakMax = document.getElementById('player-two-streak-max');
+const player2Img = document.getElementById('player-two-img');
+const infoText = document.getElementById('info-text');
+const gameSelectorSection = document.getElementById('selection-section');
+const classicSelector = document.getElementById('classic-selection');
+const advancedSelector = document.getElementById('advanced-selection');
+const fightersSection = document.getElementById('fighters-selection');
+const changeGame = document.getElementById('change-game');
+const resetStats = document.getElementById('reset-stats');
 
 window.addEventListener('load', function() {
     displayPlayerData();
@@ -87,17 +87,17 @@ function displayFightersSection() {
 }
 
 function addFighters() {
-    var fighters = fightersData[game.gameMode];
+    const fighters = fightersData[game.gameMode];
     fightersSection.innerHTML = '';
-    for(var i = 0; i < fighters.length; i++) {
-        fightersSection.innerHTML += `<img draggable="false" id="fighter" class="fighter" data-fighter-index="${i}" src="${fighters[i].img}" alt="${fighters[i].id} fighter"/>`
-    }
+    fighters.forEach((fighter,i) => {
+        fightersSection.innerHTML += `<img draggable="false" id="fighter" class="fighter" data-fighter-index="${i}" src="${fighter.img}" alt="${fighter.id} fighter"/>`
+    }) 
 }
 
 function selectFighters(event) {
-    var fighterIndex = event.target.dataset.fighterIndex;
-    var player1Fighter = player1.takeTurn(game.gameMode, fighterIndex);
-    var player2Fighter = player2.takeTurn(game.gameMode);
+    const fighterIndex = event.target.dataset.fighterIndex;
+    const player1Fighter = player1.takeTurn(game.gameMode, fighterIndex);
+    const player2Fighter = player2.takeTurn(game.gameMode);
     game.setFighters(player1Fighter, player2Fighter);
 }
 
@@ -123,7 +123,7 @@ function startFightSequence() {
 }
 
 function displayPlayer1Selection() {
-    var fighter = game.gameData.player1Fighter;
+    const fighter = game.gameData.player1Fighter;
     setInfoText(`${player1.name} picked ${fighter.id}!`);
     player1Section.style.backgroundColor = fighter.color + '90';
     fightersSection.innerHTML = '';
@@ -131,7 +131,7 @@ function displayPlayer1Selection() {
 }
 
 function displayPlayer2Selection() {
-    var fighter = game.gameData.player2Fighter;
+    const fighter = game.gameData.player2Fighter;
     player2Section.style.backgroundColor = fighter.color + '90';
     fightersSection.innerHTML += '<p> VS. </p>'
     fightersSection.innerHTML += `<img draggable="false" class="fighter" src="${fighter.img}" alt="${fighter.id} fighter"/>`
